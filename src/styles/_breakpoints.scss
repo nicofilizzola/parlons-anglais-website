@@ -1,0 +1,16 @@
+$breakpoint-xs: 480px; // phones
+$breakpoint-sm: 768px; // tablets
+$breakpoint-md: 1024px; // small laptops
+$breakpoint-lg: 1200px; // desktops
+
+@mixin sm {
+  @media (max-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin md-up {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}

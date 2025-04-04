@@ -1,0 +1,172 @@
+@import "_variables";
+@import "_breakpoints";
+
+section {
+  position: relative; // ensure overlay works properly
+  background-color: beige;
+  padding: 3rem;
+  overflow-x: hidden; // hide x scrollbar (cause: fade in animation initial state)
+
+  @include sm {
+    padding: 1rem;
+  }
+
+  &.section-1 {
+    background-image: url("../assets/img/section-1-bg.png");
+    margin-top: 122px;
+    height: calc(100vh - 122px); // account for nav
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba($light1, 0.8); /* black overlay with 50% opacity */
+      pointer-events: none; /* so it doesn’t interfere with clicks */
+    }
+
+    @include sm {
+      margin-top: 82px; // account for nav
+      height: calc(100vh - 82px);
+      flex-direction: column;
+
+      button {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 1rem;
+        font-size: x-large;
+      }
+
+      img {
+        width: 75%;
+      }
+    }
+  }
+
+  &.section-2 {
+    background-color: $light3 !important;
+    .minicard {
+      border-radius: 1rem;
+      border: 1px solid $secondary;
+      background-color: $light2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 450px;
+      padding: 1rem;
+      text-align: center;
+      transition: 0.3s;
+
+      img {
+        width: 60px;
+      }
+
+      &:hover {
+        background-color: darken($color: $light2, $amount: 5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      @include sm {
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  // to remove later
+  &:nth-child(odd) {
+    background-color: lightblue;
+  }
+}
+
+.sm-hidden {
+  @include sm {
+    display: none;
+  }
+}
+
+.sm-only {
+  @include md-up {
+    display: none;
+  }
+}
+
+button.button {
+  border: none;
+  background: none;
+  font-size: large;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &-primary {
+    background-color: $primary;
+    color: $light1;
+
+    &:hover {
+      background-color: darken($color: $secondary, $amount: 25);
+    }
+  }
+}
+
+@include sm {
+  h1 {
+    font-size: xx-large;
+  }
+}
+
+/** ANIMATIONS **/
+@keyframes slideFadeInFromRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFadeInFromLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-from-right {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideFadeInFromRight 1s ease-out forwards;
+}
+
+.fade-in-from-left {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideFadeInFromLeft 1s ease-out forwards;
+}
+
+.animation-delay-1 {
+  animation-delay: 1s;
+}
+
+.image-fade {
+  mask-image: linear-gradient(to top, transparent 0%, black 20%, black 100%);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    black 20%,
+    black 100%
+  );
+}

@@ -1,0 +1,19 @@
+$light1: #f5f5f5;
+$light2: #f0f4ff;
+$light3: #ffecea;
+$dark1: #2e2e2e;
+$primary: #263d9a;
+$secondary: #ff4d3d;
+
+.color-primary {
+  color: $primary;
+}
+.color-secondary {
+  color: $secondary;
+}
+.color-light {
+  color: $light1;
+}
+.color-dark {
+  color: $dark1;
+}

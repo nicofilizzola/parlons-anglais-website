@@ -1,0 +1,20 @@
+@import "_breakpoints";
+@import "_variables";
+
+nav.navbar {
+  background-color: $light1;
+
+  button.navbar-brand {
+    border: none;
+    background: none;
+    width: 250px;
+
+    img {
+      width: 100%;
+    }
+
+    @include sm {
+      width: 150px;
+    }
+  }
+}
