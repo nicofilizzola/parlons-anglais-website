@@ -13,8 +13,8 @@ section {
 
   &.section-1 {
     background-image: url("../assets/img/section-1-bg.png");
-    margin-top: 122px;
-    height: calc(100vh - 122px); // account for nav
+    margin-top: $navHeight;
+    height: $viewportHeightMinusNav;
     overflow: hidden;
 
     &::before {
@@ -29,8 +29,8 @@ section {
     }
 
     @include sm {
-      margin-top: 82px; // account for nav
-      height: calc(100vh - 82px);
+      margin-top: $smNavHeight;
+      height: $smViewportHeightMinusNav;
       flex-direction: column;
 
       button {
@@ -58,8 +58,8 @@ section {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 450px;
-      padding: 1rem;
+      width: 275px;
+      padding: 1.5rem;
       text-align: center;
       transition: 0.3s;
 
@@ -75,13 +75,44 @@ section {
       @include sm {
         width: 100%;
         margin-top: 1rem;
+
+        p {
+          font-size: large;
+        }
       }
     }
   }
 
-  // to remove later
-  &:nth-child(odd) {
-    background-color: lightblue;
+  &.section-3 {
+    background-color: $primary;
+    color: $light3;
+
+    img {
+      &.desktop {
+        height: $viewportHeightMinusNav;
+        border-radius: 1rem;
+      }
+      &.mobile {
+        width: 100vw;
+        height: 450px;
+        object-fit: cover;
+        object-position: bottom;
+      }
+    }
+
+    @include sm {
+      padding-top: 0;
+    }
+  }
+
+  &.section-4 {
+    img {
+      border-radius: 100%;
+      width: 200px;
+    }
+
+    color: $dark1;
+    background-color: $light2;
   }
 }
 
