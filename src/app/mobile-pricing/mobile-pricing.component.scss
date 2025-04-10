@@ -1,0 +1,13 @@
+@import "_variables";
+
+.card {
+  &.recommended {
+    border: 2px solid $primary;
+
+    .recommended-label {
+      background-color: $primary;
+      color: $light1;
+      border-radius: 0 0 0 10px;
+    }
+  }
+}

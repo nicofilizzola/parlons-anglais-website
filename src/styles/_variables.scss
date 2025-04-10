@@ -18,8 +18,8 @@ $secondary: #ff4d3d;
   color: $dark1;
 }
 
-$navHeight: 122px;
+$navHeight: 90px;
 $viewportHeightMinusNav: calc(100vh - #{$navHeight});
 
-$smNavHeight: 122px;
-$smViewportHeightMinusNav: calc(100vh - #{$navHeight});
+$smNavHeight: 82px;
+$smViewportHeightMinusNav: calc(100vh - #{$smNavHeight});

@@ -7,7 +7,7 @@ nav.navbar {
   button.navbar-brand {
     border: none;
     background: none;
-    width: 250px;
+    width: 200px;
 
     img {
       width: 100%;
@@ -15,6 +15,17 @@ nav.navbar {
 
     @include sm {
       width: 150px;
+    }
+  }
+
+  a.button {
+    border-radius: 10px;
+    border: 2px solid $secondary;
+    color: $secondary;
+
+    &:hover {
+      border-color: darken($color: $secondary, $amount: 25);
+      color: darken($color: $secondary, $amount: 25);
     }
   }
 }

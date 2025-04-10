@@ -1,6 +1,10 @@
 @import "_variables";
 @import "_breakpoints";
 
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 section {
   position: relative; // ensure overlay works properly
   background-color: beige;
@@ -13,7 +17,7 @@ section {
 
   &.section-1 {
     background-image: url("../assets/img/section-1-bg.png");
-    margin-top: $navHeight;
+    margin-top: $smNavHeight;
     height: $viewportHeightMinusNav;
     overflow: hidden;
 
@@ -33,7 +37,8 @@ section {
       height: $smViewportHeightMinusNav;
       flex-direction: column;
 
-      button {
+      a {
+        display: block;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -84,8 +89,26 @@ section {
   }
 
   &.section-3 {
-    background-color: $primary;
+    background-image: url("../assets/img/section-3-bg.jpg");
     color: $light3;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(
+        $primary,
+        0.8
+      ); /* black overlay with 50% opacity */
+      pointer-events: none; /* so it doesn’t interfere with clicks */
+    }
+
+    * {
+      z-index: 1; // ensure text is above the background image
+    }
 
     img {
       &.desktop {
@@ -109,26 +132,69 @@ section {
     img {
       border-radius: 100%;
       width: 200px;
+      border: 3px solid $secondary;
     }
 
+    text-align: center;
     color: $dark1;
     background-color: $light2;
   }
+
+  &.section-5 {
+    background-color: $light3;
+    border-top: 10px solid $secondary;
+
+    .card {
+      &.recommended {
+        border: 2px solid $primary;
+
+        .recommended-label {
+          background-color: $primary;
+          color: $light1;
+          border-radius: 0 0 0 10px;
+        }
+      }
+    }
+  }
+
+  &.section-6 {
+    background-color: $secondary;
+    color: $light1;
+  }
+
+  &.section-7 {
+    background-color: $light2;
+    color: $dark1;
+  }
+
+  &.section-8 {
+    background-color: $primary;
+    color: $light1;
+  }
+}
+
+swiper-container {
+  --swiper-pagination-color: #263d9a;
+  --swiper-pagination-bullet-inactive-color: #263d9a; /* inactive bullets */
+  --swiper-pagination-bullet-inactive-opacity: 0.35;
+  --swiper-navigation-color: #263d9a;
 }
 
 .sm-hidden {
   @include sm {
-    display: none;
+    display: none !important;
   }
 }
 
 .sm-only {
   @include md-up {
-    display: none;
+    display: none !important;
   }
 }
 
-button.button {
+button.button,
+a.button {
+  text-decoration: none;
   border: none;
   background: none;
   font-size: large;
@@ -136,9 +202,19 @@ button.button {
   border-radius: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  display: inline-block;
 
   &-primary {
     background-color: $primary;
+    color: $light1;
+
+    &:hover {
+      background-color: darken($color: $primary, $amount: 15);
+    }
+  }
+
+  &-secondary {
+    background-color: $secondary;
     color: $light1;
 
     &:hover {

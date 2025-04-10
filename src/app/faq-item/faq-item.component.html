@@ -1,0 +1,22 @@
+<div (click)="isCollapsed = !isCollapsed" style="cursor: pointer">
+  <div class="d-flex mb-1">
+    <fa-icon
+      [icon]="faCaretUp"
+      style="transition: 0.3s"
+      class="me-3"
+      [ngClass]="{
+        'fa-rotate-180': isCollapsed,
+        'fa-rotate-90': !isCollapsed
+      }"
+    ></fa-icon>
+    <p class="mb-0">
+      <b>{{ question }}</b>
+    </p>
+  </div>
+  <p #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <ng-content></ng-content>
+  </p>
+</div>
+@if (!hideBottomLine) {
+<hr />
+}

@@ -1,8 +1,6 @@
 <app-nav></app-nav>
 
-<section
-  class="section-1 d-flex justify-content-center align-items-center h-full-vh"
->
+<section class="section-1 d-flex justify-content-center align-items-center">
   <div class="me-5 fade-in-from-left">
     <h1 class="color-primary">
       Apprendre l’anglais comme je l’ai appris : <b>en immersion totale.</b>
@@ -11,9 +9,13 @@
       Prof polyglotte, j’ai appris le français sans cours — maintenant, je vous
       montre comment faire pareil en anglais.
     </h2>
-    <button class="button button-primary mt-2 sm-hidden">
-      Réserver une session de découverte
-    </button>
+    <a
+      href="https://calendly.com/nicolas-filizzola-english/seance-de-decouverte"
+      class="button button-primary mt-2 sm-hidden"
+      target="_blank"
+    >
+      Réserver une session de découverte gratuite
+    </a>
   </div>
   <img
     class="image-fade fade-in-from-right animation-delay-1"
@@ -21,19 +23,23 @@
     alt="Une photographie de Nicolas Filizzola, fondateur de Parlons Anglais !"
   />
 
-  <button class="button button-primary mt-2 sm-only">
-    Réserver une session de découverte
-  </button>
+  <a
+    class="button button-primary mt-2 sm-only text-center"
+    href="https://calendly.com/nicolas-filizzola-english/seance-de-decouverte"
+    target="_blank"
+  >
+    Réserver une session de découverte gratuite
+  </a>
 </section>
 
-<section class="section-2">
-  <h1 class="text-center color-dark mt-4 mt-md-0">
+<section class="section-2" id="s2">
+  <h1 class="text-center color-dark mt-4 mt-md-0 fs-3">
     Vous avez pris des cours, appris la grammaire, passé des heures sur des
     applis… et pourtant vous n’osez toujours pas parler ?
   </h1>
   <hr class="mt-4" />
-  <h2 class="mt-4 text-center color-dark">
-    🎯 Chez Parlons Anglais, on fait le contraire : On pratique, on parle, on se
+  <h2 class="mt-4 text-center color-dark fs-4">
+    Chez Parlons Anglais, on fait le contraire : On pratique, on parle, on se
     trompe, on recommence —
     <span class="color-secondary"><b>comme les natifs.</b></span>
   </h2>
@@ -55,7 +61,7 @@
 
     <div class="minicard">
       <fa-icon [icon]="faGlobe" size="3x"></fa-icon>
-      <p class="mb-0">
+      <p class="mb-0 mt-1">
         Entièrement en ligne : pratique, flexible, accessible partout
       </p>
     </div>
@@ -68,6 +74,7 @@
 </section>
 
 <section
+  id="s3"
   class="section-3 d-flex justify-content-between align-items-center flex-column flex-md-row"
 >
   <img
@@ -76,7 +83,7 @@
     class="sm-only mobile"
   />
   <div class="mt-4 mt-md-0">
-    <h1 class="mb-3">Ma méthode ? Moins de règles, plus de parole.</h1>
+    <h1 class="mb-3 fs-2">Notre méthode ? Moins de règles, plus de parole.</h1>
     <p>
       En arrivant en France, je parlais à peine la langue. J’ai été plongé en
       internat, sans traducteur, sans béquille…
@@ -110,12 +117,12 @@
   <img
     src="../assets/img/section-3.jpg"
     alt="Nicolas en train de faire un cours"
-    class="sm-hidden desktop"
+    class="sm-hidden desktop ms-0 ms-md-3"
   />
 </section>
 
-<section class="section-4 d-flex flex-column align-items-center">
-  <h1 class="mb-4">
+<section class="section-4 d-flex flex-column align-items-center" id="s4">
+  <h1 class="mb-4 fs-2">
     Moi, c’est Nicolas. Prof d’anglais, polyglotte… et ancien élève galérien.
   </h1>
   <img
@@ -140,29 +147,261 @@
   </p>
 </section>
 
-<section>
-  <h1>Heading</h1>
+<section class="section-5" id="s5">
+  <h1 class="fs-2">Des cours adaptés à vous. Pas l’inverse.</h1>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. In necessitatibus
-    maxime laboriosam sunt amet odit aliquid perferendis beatae repellendus ut
-    ex neque vel, ipsam cupiditate, unde a? Voluptas, veritatis earum.
+    Que vous cherchiez à prendre confiance, à préparer un test, ou à passer un
+    cap décisif à l’oral, il y a une offre pour vous. <br />
+    Et si vous hésitez ? On en parle ensemble.
+  </p>
+  <app-mobile-pricing class="sm-only"></app-mobile-pricing>
+  <div class="d-flex mt-4 sm-hidden">
+    <div class="card w-100">
+      <div class="card-header">
+        <h2 class="card-title">Découverte</h2>
+        <p class="card-subtitle text-muted">
+          Pour tester, progresser, échanger
+        </p>
+      </div>
+      <div class="card-body">
+        <p><b>Idéal pour débuter en douceur sans se ruiner.</b></p>
+        <p>
+          Un accompagnement collectif accessible, avec du suivi et des
+          ressources solides.
+        </p>
+        <p>
+          ✅ 1 cours en petit groupe par semaine <br />
+          ✅ 1 suivi individuel de 20 min / mois <br />
+          ✅ Accès à des supports exclusifs (PDF, vidéos, audios) <br />
+          ✅ Conseils de progression personnalisés <br />
+          ✅ Accès à l’espace communauté <br />
+        </p>
+      </div>
+      <div class="card-footer">
+        <p class="fs-4">69€/mois</p>
+      </div>
+    </div>
+
+    <div class="card w-100 mx-4 position-relative recommended">
+      <div class="position-absolute top-0 end-0 recommended-label py-1 px-2">
+        <fa-icon [icon]="faStar" class="me-1"></fa-icon>
+        <small>Recommandé</small>
+      </div>
+
+      <div class="card-header">
+        <h2 class="card-title">Standard</h2>
+        <p class="card-subtitle text-muted">
+          Pour ceux qui veulent du vrai sur-mesure
+        </p>
+      </div>
+      <div class="card-body">
+        <p>
+          <b>
+            Un équilibre entre structure collective et accompagnement personnel.
+          </b>
+        </p>
+        <p>Vous progressez à votre rythme, avec un suivi renforcé.</p>
+        <p>
+          ✅ Tout ce qui est inclus dans l’Offre Découverte<br />
+          ✅ 2 cours individuels d’1h par mois<br />
+          ✅ Feedback personnalisé sur un exercice ou enregistrement chaque
+          mois<br />
+          ✅ Un plan d’action mensuel pour booster votre progression<br />
+        </p>
+      </div>
+      <div class="card-footer">
+        <p class="fs-4">169€/mois</p>
+      </div>
+    </div>
+
+    <div class="card w-100">
+      <div class="card-header">
+        <h2 class="card-title">Accéléré</h2>
+        <p class="card-subtitle text-muted">
+          Pour aller au bout de votre potentiel
+        </p>
+      </div>
+      <div class="card-body">
+        <p><b>Le nec plus ultra.</b></p>
+        <p>
+          Coaching individuel intensif + suivi avancé pour ceux qui veulent
+          transformer leur anglais.
+        </p>
+        <p>
+          ✅ Tout ce qui est inclus dans l’Offre Standard<br />
+          ✅ 1 cours individuel d’1h par semaine (4–6 par mois)<br />
+          ✅ Feedback détaillé après chaque session (oral + notes clés)<br />
+          ✅ Priorité dans la prise de rendez-vous<br />
+          ✅ Accompagnement mindset et organisation si besoin<br />
+        </p>
+      </div>
+      <div class="card-footer">
+        <p class="fs-4">279€/mois</p>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex mt-3 justify-content-center">
+    <a
+      href="https://calendly.com/nicolas-filizzola-english/seance-de-decouverte"
+      class="button button-primary text-center"
+      target="_blank"
+    >
+      Réserver un premier cours gratuit
+    </a>
+  </div>
+</section>
+
+<section class="section-6" id="s6">
+  <h1 class="fs-2">Quelques témoignages...</h1>
+  <swiper-container
+    slides-per-view="1"
+    speed="500"
+    loop="true"
+    navigation="true"
+    pagination="true"
+  >
+    <swiper-slide class="px-5 pb-5 pt-3 pt-md-0">
+      <app-review-item [author]="'Kevin'">
+        Le meilleur professeur d’anglais que j’ai rencontré ! Je n’aimais pas
+        les cours d’anglais, et Nicolas m’a appris à aimer cette langue, à
+        progresser, et à l’intégrer dans mon quotidien. Il sait s’adapter en
+        fonction de votre niveau et de vos besoins. Merci encore, Nicolas, et à
+        très bientôt
+      </app-review-item>
+    </swiper-slide>
+
+    <swiper-slide class="px-5 pb-5 pt-3 pt-md-0">
+      <app-review-item
+        [author]="'Sandrine Bourguignon'"
+        [imgSrc]="'../assets/img/section-6-sandrine.jpeg'"
+      >
+        Nicolas est un super prof: parfait pour progresser en discussion,
+        apprendre du nouveau vocabulaire et progresser en grammaire. Le tout
+        avec une approche pédagogique positive. Je recommande
+      </app-review-item>
+    </swiper-slide>
+
+    <swiper-slide class="px-5 pb-5 pt-3 pt-md-0">
+      <app-review-item [author]="'Ilhan Jean-Marie'">
+        Très bon professeur et très sympathique. Il cible rapidement les
+        éléments sur lesquels vous avez des difficultés et propose des exercices
+        pertinents afin de vous améliorer. Il s\'adapte parfaitement à vos
+        besoins (court terme/moyen terme/long terme) ce qui est un vrai plus.
+        Cela laisse présager une très bonne progression pour ma part. Merci à
+        vous.
+      </app-review-item>
+    </swiper-slide>
+
+    <swiper-slide class="px-5 pb-5 pt-3 pt-md-0">
+      <app-review-item [author]="'Mikael'">
+        En quelques conseils, j’ai validé mon examen !! Une bonne stratégie pour
+        analyser les questions et pouvoir y répondre !! Merci encore
+      </app-review-item>
+    </swiper-slide>
+  </swiper-container>
+  <p class="text-center color-light">
+    <a
+      class="color-light fw-light"
+      href="https://www.superprof.fr/prof-polyglotte-experience-donne-cours-conversation-anglais.html"
+      target="_blank"
+      >Source: Superprof</a
+    >
   </p>
 </section>
 
-<section>
-  <h1>Heading</h1>
+<section class="section-7" id="s7">
+  <h1>Foire aux questions (FAQ)</h1>
+
+  <app-faq-item
+    [isCollapsed]="false"
+    [question]="'Est-ce que c’est adapté à mon niveau ?'"
+  >
+    Absolument. Les cours sont conçus sur-mesure. Que vous soyez grand débutant,
+    intermédiaire ou déjà à l’aise mais en quête de fluidité, nous nous adaptons
+    à votre niveau, vos objectifs et votre rythme.
+  </app-faq-item>
+
+  <app-faq-item
+    [question]="'Faut-il déjà parler un peu anglais pour commencer ?'"
+  >
+    Non ! On peut commencer de zéro. Grâce à la méthode immersive, vous serez
+    surpris de tout ce que vous comprenez et retenez, même sans passer par le
+    français.
+  </app-faq-item>
+
+  <app-faq-item [question]="'C’est en ligne… mais est-ce vraiment efficace ?'">
+    Oui, et même plus qu’en présentiel parfois. On se voit en visio, avec des
+    outils interactifs, des supports partagés, des activités dynamiques — tout
+    est pensé pour garder le contact humain et maximiser l’apprentissage, sans
+    contrainte de déplacement.
+  </app-faq-item>
+
+  <app-faq-item [question]="'Combien de temps faut-il pour progresser ?'">
+    Chaque apprenant est différent, mais la plupart de mes élèves remarquent un
+    vrai changement dans leur aisance orale dès les premières semaines. Le plus
+    important, c’est la régularité et l’engagement.
+  </app-faq-item>
+
+  <app-faq-item [question]="'Est-ce qu’on fait de la grammaire ?'">
+    Oui… mais pas comme à l’école. On l’aborde à travers des situations réelles,
+    de façon contextuelle, pour que ça devienne un automatisme, pas un
+    casse-tête.
+  </app-faq-item>
+
+  <app-faq-item [question]="'Quels types de cours sont proposés ?'">
+    👉 Cours individuels pour un accompagnement personnalisé<br />
+    👉 Cours en petit groupe pour l’émulation collective<br />
+    👉 Préparation aux tests (TOEIC, TOEFL, IELTS)<br />
+    👉 Accès à des supports exclusifs en complément des sessions<br />
+    👉 Suivi par une équipe pédagogique expérimentée
+  </app-faq-item>
+
+  <app-faq-item [question]="'Comment se déroule un cours typique ?'">
+    On commence souvent par une conversation libre (échauffement), suivie
+    d’exercices ciblés selon vos besoins. On travaille l’écoute, la parole, la
+    fluidité… tout en s’amusant. Pas de cours rigides, mais des échanges vivants
+    et utiles.
+  </app-faq-item>
+
+  <app-faq-item [question]="'Puis-je annuler ou déplacer un cours ?'">
+    Oui, tant que c’est prévenu au minimum 24h à l’avance. La flexibilité, c’est
+    aussi ça, l’avantage des cours en ligne.
+  </app-faq-item>
+
+  <app-faq-item [question]="'Est-ce que je peux tester avant de m’engager ?'">
+    Bien sûr ! Une
+    <span class="text-decoration-underline">session découverte gratuite</span>
+    est proposée pour qu’on fasse connaissance, qu’on évalue votre niveau et
+    qu’on définisse ensemble vos objectifs.
+  </app-faq-item>
+</section>
+
+<section class="section-8">
+  <div
+    class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+  >
+    <h1 class="text-center text-md-start my-3 my-md-0 fs-2">
+      Prêt à parler anglais avec aisance ?
+    </h1>
+    <a
+      href="https://calendly.com/nicolas-filizzola-english/seance-de-decouverte"
+      class="button button-secondary"
+      target="_blank"
+    >
+      Réservez une session de découverte gratuite
+    </a>
+  </div>
+  <hr />
+  <h2 class="fs-5">Une question ? Contactez-nous</h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. In necessitatibus
-    maxime laboriosam sunt amet odit aliquid perferendis beatae repellendus ut
-    ex neque vel, ipsam cupiditate, unde a? Voluptas, veritatis earum.
+    <fa-icon [icon]="faEnvelope" class="me-2"></fa-icon
+    >nicolas.filizzola.english&#64;gmail.com
   </p>
 </section>
 
-<section>
-  <h1>Heading</h1>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. In necessitatibus
-    maxime laboriosam sunt amet odit aliquid perferendis beatae repellendus ut
-    ex neque vel, ipsam cupiditate, unde a? Voluptas, veritatis earum.
-  </p>
-</section>
+<footer
+  style="background-color: grey"
+  class="py-3 d-flex align-items-center justify-content-center"
+>
+  <span class="text-muted">Tous droits réservés © 2025 Nicolas Filizzola</span>
+</footer>

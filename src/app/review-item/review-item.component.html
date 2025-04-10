@@ -1,0 +1,17 @@
+<div class="mx-0 mx-md-5 d-flex flex-column align-items-center">
+  <img [src]="imgSrc" alt="" class="mb-1" />
+  <p class="text-center">
+    <b>{{ author }}</b>
+  </p>
+  <div class="mb-1 d-flex">
+    <fa-icon [icon]="faStar"></fa-icon>
+    <fa-icon [icon]="faStar"></fa-icon>
+    <fa-icon [icon]="faStar"></fa-icon>
+    <fa-icon [icon]="faStar"></fa-icon>
+    <fa-icon [icon]="faStar"></fa-icon>
+    <span class="ms-1">5/5</span>
+  </div>
+  <q class="d-block text-center fst-italic">
+    <ng-content></ng-content>
+  </q>
+</div>
