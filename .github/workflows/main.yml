@@ -29,4 +29,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/browser  # Angular 18 output folder
+          folder: dist/parlons-anglais-website/browser  # Angular 18 output folder
