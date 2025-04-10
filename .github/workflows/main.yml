@@ -23,7 +23,7 @@ jobs:
 
       - name: 🔨 Build Angular app
         run: |
-          npm run build -- --configuration production --base-href "/parlons-anglais-website/"
+          npx ng build parlons-anglais-website --configuration production --base-href "/parlons-anglais-website/"
 
       - name: 🚀 Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
